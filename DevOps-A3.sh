@@ -1,7 +1,7 @@
 #!/bin/bash
 
 DB_USER="root"
-DB_PASSWORD=""
+DB_PASSWORD="mnbvcxz"
 DB_NAME="DevOps_Assignment3"
 
 REMOTE_NAME="gdrive"
@@ -15,3 +15,8 @@ sudo mysqldump -u$DB_USER -p$DB_PASSWORD $DB_NAME > $BACKUP_DIR/$BACKUP_FILENAME
 rclone copy $BACKUP_DIR/$BACKUP_FILENAME $REMOTE_NAME:$REMOTE_PATH
 
 rm $BACKUP_DIR/$BACKUP_FILENAME
+
+sleep 10
+crontab -e
+
+* * * * * /DevOps-A3.sh
