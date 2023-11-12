@@ -18,5 +18,3 @@ rm $BACKUP_DIR/$BACKUP_FILENAME
 
 sleep 10
 crontab -e
-
-* * * * * /DevOps-A3.sh
